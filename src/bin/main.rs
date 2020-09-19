@@ -25,8 +25,6 @@ fn handle_connection(mut stream: TcpStream) -> Result<(), std::io::Error> {
 
     stream.read(&mut buffer)?;
 
-    println!("Request: {}", String::from_utf8_lossy(&buffer));
-
     let get = b"GET / HTTP/1.1\r\n";
     let sleep = b"GET /sleep HTTP/1.1\r\n";
 
